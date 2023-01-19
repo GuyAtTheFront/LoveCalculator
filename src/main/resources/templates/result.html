@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Your compatibility results: </h1>
+    <h2 data-th-text="${dao.percentage} > 70 ? 'Compatible' : 'Not Compatible'" style="color:blue"/>
+    <ul data-th-object="${dao}">
+        <li data-th-text="'fname: ' + *{fname}"/>
+        <li data-th-text="'sname: ' + *{sname}"/>
+        <li data-th-text="'score: ' + *{percentage}"/>
+        <li data-th-text="'result ' + *{result}"/>
+    </ul>
+</body>
+</html>
