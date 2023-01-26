@@ -1,7 +1,5 @@
 package com.example.LoveCalculator.models;
 
-import org.springframework.stereotype.Component;
-
 public class CompatibilityDao {
     private String fname;
     private String sname;

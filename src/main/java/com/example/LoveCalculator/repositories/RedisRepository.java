@@ -11,17 +11,18 @@ import org.springframework.stereotype.Repository;
 public class RedisRepository {
     
     @Autowired
-    RedisTemplate<String, Object> template;
+    RedisTemplate<String, String> template;
 
     public void insertRecord(String json) {
         System.out.println("insertRecord");
-        Integer index = template.keys("*").size() + 1;
+        Integer index = template.keys("*").size() + 1; 
         System.out.println(index);
         
         
         while(null != template.opsForValue().get(""+index)) {
             index++;
         }
+
         System.out.println("insertRecord 2");
         template.opsForValue().set(""+index, json);
 

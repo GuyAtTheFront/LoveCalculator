@@ -49,6 +49,7 @@ public class MyController {
 
     @GetMapping(path="/list")
     public String result(Model model) {
+        System.out.println("test \n\n\n\n\n\n");
         List<String> jsons = redis.getAllRecords();
         List<CompatibilityDao> daos = jsons.stream()
                                         .map(x -> loveService.toObject(x))
